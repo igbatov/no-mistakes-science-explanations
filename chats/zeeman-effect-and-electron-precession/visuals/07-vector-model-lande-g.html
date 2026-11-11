@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animation: vector model and the Lande g-factor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Animation: vector model and the Lande g-factor</h1>
+<h2 class="sr-only">Animation of the vector model: L and S precess quickly around their sum J, the magnetic moment wobbles around the direction opposite J, and J precesses slowly about the field B at a rate set by the Landé g-factor.</h2>
+<div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text-secondary);padding:4px 0 8px">
+<span>Field B</span>
+<input type="range" id="bs" min="0" max="100" value="50" style="flex:1" aria-label="External field strength">
+<span id="bl" style="min-width:40px;text-align:right">0.50</span>
+<button id="sw" style="padding:4px 12px;border:0.5px solid var(--border-strong);border-radius:var(--radius);background:transparent;color:var(--text-primary);cursor:pointer;font-size:13px">Switch level</button>
+<button id="pp" style="padding:4px 12px;border:0.5px solid var(--border-strong);border-radius:var(--radius);background:transparent;color:var(--text-primary);cursor:pointer;font-size:13px">Pause</button>
+</div>
+<svg width="100%" viewBox="0 0 680 440" role="img"><title>Vector model of L, S, J and the magnetic moment in a weak field</title><desc>Left: three-dimensional view with B vertical. L and S form a triangle with J and rotate quickly about J. The magnetic moment arrow wobbles around a dashed average arrow opposite to J. Right: a top-view dial comparing the precession rate of this level with orbit-only and spin-only rates.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<line x1="190" y1="400" x2="190" y2="36" stroke="var(--t)" stroke-width="0.5" marker-end="url(#arrow)"/>
+<text class="th" x="200" y="44">B</text>
+<polyline id="tr" fill="none" stroke="#D85A30" stroke-width="0.5" opacity="0.6" points=""/>
+<line id="ma" x1="190" y1="230" x2="190" y2="300" stroke="#D85A30" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+<line id="mu" x1="190" y1="230" x2="190" y2="300" stroke="#D85A30" stroke-width="2" marker-end="url(#arrow)"/>
+<line id="lv" x1="190" y1="230" x2="190" y2="130" stroke="#1D9E75" stroke-width="2" marker-end="url(#arrow)"/>
+<line id="sv" x1="190" y1="130" x2="190" y2="100" stroke="#7F77DD" stroke-width="2" marker-end="url(#arrow)"/>
+<line id="jv" x1="190" y1="230" x2="190" y2="100" stroke="var(--p)" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="190" cy="230" r="3" fill="var(--p)"/>
+<text id="tj" class="th" x="200" y="100">J</text>
+<text id="tl" class="th" x="200" y="150">L</text>
+<text id="ts" class="th" x="200" y="120">S</text>
+<text id="tm" class="th" x="200" y="300">μ</text>
+<text id="lev" class="th" x="390" y="50">Level ²P3/2</text>
+<text class="ts" x="390" y="74">L (orbit) and S (spin) circle J fast</text>
+<text class="ts" x="390" y="94">μ lies along −(L + 2S), wobbling around −J</text>
+<text class="ts" x="390" y="114">Dashed arrow: average μ = −g·J</text>
+<text id="g1" class="t" x="390" y="146">S·J / J² = +1/3</text>
+<text id="g2" class="t" x="390" y="168">g = 1 + 1/3 = 4/3</text>
+<text class="ts" x="390" y="206">Top view: precession about B</text>
+<circle cx="450" cy="290" r="30" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<circle cx="450" cy="290" r="44" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<circle cx="450" cy="290" r="58" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<circle cx="450" cy="290" r="2" fill="var(--t)"/>
+<circle id="q1" cx="480" cy="290" r="5" fill="#888780"/>
+<circle id="q2" cx="494" cy="290" r="5" fill="none" stroke="#888780" stroke-width="1.5"/>
+<circle id="q3" cx="508" cy="290" r="6" fill="var(--p)"/>
+<circle cx="536" cy="262" r="6" fill="var(--p)"/>
+<text id="lg" class="ts" x="550" y="266">this level, 4/3 ω_L</text>
+<circle cx="536" cy="290" r="5" fill="#888780"/>
+<text class="ts" x="550" y="294">orbit only, ω_L</text>
+<circle cx="536" cy="318" r="5" fill="none" stroke="#888780" stroke-width="1.5"/>
+<text class="ts" x="550" y="322">spin only, 2ω_L</text>
+<text class="ts" x="390" y="388">With B = 0, L and S still circle J,</text>
+<text class="ts" x="390" y="406">but J stays fixed.</text>
+</svg>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var lv=[{n:'Level ²P3/2',J2:3.75,m:1.5,a:'S·J / J² = +1/3',b:'g = 1 + 1/3 = 4/3',l:'this level, 4/3 ω_L'},{n:'Level ²P1/2',J2:0.75,m:0.5,a:'S·J / J² = −1/3',b:'g = 1 − 1/3 = 2/3',l:'this level, 2/3 ω_L'}];
+var k=0,B=0.5,run=true,phi=0.6,chi=0,ref=0,last=null,tr=[],cx=190,cy=230,el=0.3,ce=Math.cos(el),se=Math.sin(el),U=70,M=42;
+function P(v,s){return [cx+v[0]*s,cy-(v[2]*ce-v[1]*se)*s];}
+function ln(id,p,q){var e=$(id);e.setAttribute('x1',p[0]);e.setAttribute('y1',p[1]);e.setAttribute('x2',q[0]);e.setAttribute('y2',q[1]);}
+function tx(id,p,dx,dy){var e=$(id);e.setAttribute('x',p[0]+dx);e.setAttribute('y',p[1]+dy);}
+function info(){var o=lv[k];$('lev').textContent=o.n;$('g1').textContent=o.a;$('g2').textContent=o.b;$('lg').textContent=o.l;tr=[];}
+function draw(){var o=lv[k],J=Math.sqrt(o.J2),S2=0.75,L2=2,sj=(o.J2+S2-L2)/2,g=1+sj/o.J2,sp=sj/J,sq=Math.sqrt(S2-sp*sp);
+var ct=o.m/J,st=Math.sqrt(1-ct*ct),cp=Math.cos(phi),sn=Math.sin(phi);
+var j=[st*cp,st*sn,ct],a=[ct*cp,ct*sn,-st],b=[-sn,cp,0],c=Math.cos(chi)*sq,d=Math.sin(chi)*sq;
+var Jv=[j[0]*J,j[1]*J,j[2]*J],Sv=[j[0]*sp+a[0]*c+b[0]*d,j[1]*sp+a[1]*c+b[1]*d,j[2]*sp+a[2]*c+b[2]*d];
+var Lv=[Jv[0]-Sv[0],Jv[1]-Sv[1],Jv[2]-Sv[2]],Mv=[-(Jv[0]+Sv[0]),-(Jv[1]+Sv[1]),-(Jv[2]+Sv[2])],Av=[-g*Jv[0],-g*Jv[1],-g*Jv[2]];
+var O=[cx,cy],pj=P(Jv,U),pl=P(Lv,U),pm=P(Mv,M),pa=P(Av,M);
+ln('jv',O,pj);ln('lv',O,pl);ln('sv',pl,pj);ln('mu',O,pm);ln('ma',O,pa);
+tx('tj',pj,10,-4);tx('tl',[(O[0]+pl[0])/2,(O[1]+pl[1])/2],-18,4);tx('ts',[(pl[0]+pj[0])/2,(pl[1]+pj[1])/2],8,14);tx('tm',pm,8,14);
+tr.push(pm[0].toFixed(1)+','+pm[1].toFixed(1));if(tr.length>48)tr.shift();$('tr').setAttribute('points',tr.join(' '));
+function dot(id,r,an){$(id).setAttribute('cx',450+r*Math.cos(an));$(id).setAttribute('cy',290-r*Math.sin(an));}
+dot('q1',30,ref);dot('q2',44,2*ref);dot('q3',58,g*ref);return g;}
+function step(t){if(last===null)last=t;var dt=Math.min((t-last)/1000,0.05);last=t;
+if(run){var o=lv[k],g=1+((o.J2+0.75-2)/2)/o.J2;chi+=8*dt;ref+=1.1*B*dt;phi+=g*1.1*B*dt;draw();}
+requestAnimationFrame(step);}
+$('bs').addEventListener('input',function(){B=$('bs').value/100;$('bl').textContent=B.toFixed(2);});
+$('sw').addEventListener('click',function(){k=1-k;info();draw();});
+$('pp').addEventListener('click',function(){run=!run;$('pp').textContent=run?'Pause':'Play';});
+info();draw();requestAnimationFrame(step);
+})();
+</script>
+<p class="note">Recreated from the chat "Zeeman effect and electron precession". Speeds and sizes in animations are scaled for visibility.</p>
+</body>
+</html>

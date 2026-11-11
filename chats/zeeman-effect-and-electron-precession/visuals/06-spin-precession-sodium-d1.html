@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animation: spin precession and the sodium D1 pattern</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Animation: spin precession and the sodium D1 pattern</h1>
+<h2 class="sr-only">Animation: a spinning electron whose axis precesses about a magnetic field, beside the energy levels and four split lines of the sodium D1 transition.</h2>
+<div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text-secondary);padding:4px 0 8px">
+<span>Field B</span>
+<input type="range" id="bs" min="0" max="100" value="60" style="flex:1" aria-label="Magnetic field strength">
+<span id="bl" style="min-width:40px;text-align:right">0.60</span>
+<button id="fl" style="padding:4px 12px;border:0.5px solid var(--border-strong);border-radius:var(--radius);background:transparent;color:var(--text-primary);cursor:pointer;font-size:13px">Flip spin</button>
+<button id="pp" style="padding:4px 12px;border:0.5px solid var(--border-strong);border-radius:var(--radius);background:transparent;color:var(--text-primary);cursor:pointer;font-size:13px">Pause</button>
+</div>
+<svg width="100%" viewBox="0 0 680 460" role="img"><title>Spin precession and the sodium D1 Zeeman pattern</title><desc>Left: a spinning ball whose spin axis traces a cone around the vertical field B. Right: upper level splitting into two closely spaced sublevels and lower level into two widely spaced sublevels, with four transitions and the resulting four spectral lines.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<line x1="150" y1="320" x2="150" y2="52" stroke="var(--t)" stroke-width="0.5" marker-end="url(#arrow)"/>
+<text class="th" x="160" y="60">B</text>
+<ellipse id="cone" cx="150" cy="136" rx="82" ry="28" fill="none" stroke="var(--t)" stroke-width="0.5" stroke-dasharray="3 3"/>
+<circle cx="150" cy="190" r="34" fill="#7F77DD" fill-opacity="0.25" stroke="#7F77DD" stroke-width="1"/>
+<polyline id="eq" fill="none" stroke="#7F77DD" stroke-width="1" points=""/>
+<circle id="dot" cx="150" cy="190" r="4" fill="#7F77DD"/>
+<line id="sv" x1="150" y1="190" x2="150" y2="90" stroke="#7F77DD" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text id="sl" class="th" x="160" y="90">S</text>
+<text class="th" x="150" y="356" text-anchor="middle">Spinning electron</text>
+<text class="ts" x="150" y="376" text-anchor="middle">axis circles B at 2ω_L</text>
+<text id="en" class="ts" x="150" y="396" text-anchor="middle">spin up: E = +μ_B·B</text>
+<text class="ts" x="340" y="50">Upper level, g = 2/3</text>
+<line id="u1" x1="340" y1="80" x2="580" y2="80" stroke="var(--t)" stroke-width="1.5"/>
+<line id="u2" x1="340" y1="100" x2="580" y2="100" stroke="var(--t)" stroke-width="1.5"/>
+<text id="ut1" class="ts" x="590" y="78">m = +½</text>
+<text id="ut2" class="ts" x="590" y="112">m = −½</text>
+<text class="ts" x="340" y="176">Lower level, pure spin, g = 2</text>
+<line id="d1" x1="340" y1="220" x2="580" y2="220" stroke="var(--t)" stroke-width="1.5"/>
+<line id="d2" x1="340" y1="280" x2="580" y2="280" stroke="var(--t)" stroke-width="1.5"/>
+<text id="dt1" class="ts" x="590" y="218">spin up</text>
+<text id="dt2" class="ts" x="590" y="292">spin down</text>
+<line id="a1" x1="380" y1="100" x2="380" y2="220" stroke="#1D9E75" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line id="a2" x1="430" y1="80" x2="430" y2="220" stroke="#D85A30" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line id="a3" x1="490" y1="100" x2="490" y2="280" stroke="#D85A30" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line id="a4" x1="540" y1="80" x2="540" y2="280" stroke="#1D9E75" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line id="k1" x1="400" y1="336" x2="400" y2="346" stroke="var(--t)" stroke-width="1" stroke-dasharray="2 2"/>
+<line id="k0" x1="460" y1="336" x2="460" y2="346" stroke="var(--t)" stroke-width="1" stroke-dasharray="2 2"/>
+<line id="k2" x1="520" y1="336" x2="520" y2="346" stroke="var(--t)" stroke-width="1" stroke-dasharray="2 2"/>
+<line id="s1" x1="380" y1="352" x2="380" y2="404" stroke="#1D9E75" stroke-width="4"/>
+<line id="s2" x1="430" y1="352" x2="430" y2="404" stroke="#D85A30" stroke-width="4"/>
+<line id="s3" x1="490" y1="352" x2="490" y2="404" stroke="#D85A30" stroke-width="4"/>
+<line id="s4" x1="540" y1="352" x2="540" y2="404" stroke="#1D9E75" stroke-width="4"/>
+<line x1="340" y1="408" x2="580" y2="408" stroke="var(--t)" stroke-width="0.5"/>
+<text class="ts" x="460" y="426" text-anchor="middle">ω₀</text>
+<text class="ts" x="460" y="448" text-anchor="middle">Dashed ticks: where the no-spin triplet would be</text>
+</svg>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var B=0.6,up=true,run=true,phi=0,psi=0,last=null,cx=150,cy=190,el=0.35,ce=Math.cos(el),se=Math.sin(el);
+function P(v){return [cx+v[0],cy-v[2]*ce+v[1]*se];}
+function sa(id,o){var e=$(id);for(var k in o)e.setAttribute(k,o[k]);}
+function setB(){B=$('bs').value/100;$('bl').textContent=B.toFixed(2);var u=B*45;
+var yu1=90-u/3,yu2=90+u/3,yd1=250-u,yd2=250+u;
+sa('u1',{y1:yu1,y2:yu1});sa('u2',{y1:yu2,y2:yu2});sa('d1',{y1:yd1,y2:yd1});sa('d2',{y1:yd2,y2:yd2});
+sa('ut1',{y:yu1-4});sa('ut2',{y:yu2+14});sa('dt1',{y:yd1-4});sa('dt2',{y:yd2+14});
+sa('a1',{y1:yu2+2,y2:yd1-4});sa('a2',{y1:yu1+2,y2:yd1-4});sa('a3',{y1:yu2+2,y2:yd2-4});sa('a4',{y1:yu1+2,y2:yd2-4});
+var f=B*70,xs=[-4/3,-2/3,2/3,4/3];
+for(var i=0;i<4;i++){var x=460+xs[i]*f;sa('s'+(i+1),{x1:x,x2:x});}
+sa('k1',{x1:460-f,x2:460-f});sa('k2',{x1:460+f,x2:460+f});
+hl();}
+function hl(){sa('d1',{'stroke-width':up?3.5:1.5,stroke:up?'#7F77DD':'var(--t)'});sa('d2',{'stroke-width':up?1.5:3.5,stroke:up?'var(--t)':'#7F77DD'});
+$('en').textContent=up?'spin up: E = +μ_B·B':'spin down: E = −μ_B·B';
+var th=up?0.96:Math.PI-0.96;sa('cone',{cy:cy-100*Math.cos(th)*ce,rx:100*Math.sin(th),ry:100*Math.sin(th)*se});}
+function draw(){var th=up?0.96:Math.PI-0.96,st=Math.sin(th),ct=Math.cos(th),cp=Math.cos(phi),sp=Math.sin(phi);
+var s=[st*cp,st*sp,ct],a=[ct*cp,ct*sp,-st],b=[-sp,cp,0];
+var p0=P([s[0]*34,s[1]*34,s[2]*34]),p1=P([s[0]*100,s[1]*100,s[2]*100]);
+sa('sv',{x1:p0[0],y1:p0[1],x2:p1[0],y2:p1[1]});sa('sl',{x:p1[0]+10,y:p1[1]-6});
+var pts=[];for(var i=0;i<=40;i++){var q=i/40*6.2832,c=Math.cos(q)*34,d=Math.sin(q)*34,p=P([a[0]*c+b[0]*d,a[1]*c+b[1]*d,a[2]*c+b[2]*d]);pts.push(p[0].toFixed(1)+','+p[1].toFixed(1));}
+$('eq').setAttribute('points',pts.join(' '));
+var c2=Math.cos(psi)*34,d2=Math.sin(psi)*34,v=[a[0]*c2+b[0]*d2,a[1]*c2+b[1]*d2,a[2]*c2+b[2]*d2],pd=P(v);
+sa('dot',{cx:pd[0],cy:pd[1],opacity:(v[1]*ce+v[2]*se)>0?1:0.3});}
+function step(ts){if(last===null)last=ts;var dt=Math.min((ts-last)/1000,0.05);last=ts;
+if(run){phi+=2.2*B*dt;psi+=7*dt;draw();}requestAnimationFrame(step);}
+$('bs').addEventListener('input',setB);
+$('fl').addEventListener('click',function(){up=!up;hl();draw();});
+$('pp').addEventListener('click',function(){run=!run;$('pp').textContent=run?'Pause':'Play';});
+setB();draw();requestAnimationFrame(step);
+})();
+</script>
+<p class="note">Recreated from the chat "Zeeman effect and electron precession". Speeds and sizes in animations are scaled for visibility.</p>
+</body>
+</html>

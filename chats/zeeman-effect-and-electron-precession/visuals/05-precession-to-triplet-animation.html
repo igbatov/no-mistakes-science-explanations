@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animation: precessing orbit = two circular motions = split lines</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Animation: precessing orbit = two circular motions = split lines</h1>
+<h2 class="sr-only">Animation: an electron orbit precessing about a magnetic field equals two counter-rotating circular motions at shifted frequencies, which appear as split spectral lines.</h2>
+<div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text-secondary);padding:4px 0 8px">
+<span>Field B</span>
+<input type="range" id="bs" min="0" max="100" value="50" style="flex:1" aria-label="Magnetic field strength">
+<span id="bl" style="min-width:44px;text-align:right">0.50</span>
+<button id="pp" style="padding:4px 12px;border:0.5px solid var(--border-strong);border-radius:var(--radius);background:transparent;color:var(--text-primary);cursor:pointer;font-size:13px">Pause</button>
+</div>
+<svg width="100%" viewBox="0 0 680 470" role="img"><title>Precessing orbit decomposed into two circular motions and the resulting spectrum</title><desc>Left: electron oscillating along a line that slowly rotates. Middle and right: the equivalent counterclockwise and clockwise circular motions. Bottom: spectral lines at the three frequencies.</desc>
+<circle cx="130" cy="150" r="100" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<line id="ax" x1="30" y1="150" x2="230" y2="150" stroke="var(--t)" stroke-width="0.5" stroke-dasharray="3 3"/>
+<polyline id="tr" fill="none" stroke="#7F77DD" stroke-width="1" opacity="0.6" points=""/>
+<circle cx="130" cy="150" r="2" fill="var(--t)"/>
+<circle id="e" cx="230" cy="150" r="7" fill="#7F77DD"/>
+<text class="t" x="270" y="155" text-anchor="middle">=</text>
+<circle cx="370" cy="150" r="50" fill="none" stroke="#1D9E75" stroke-width="1"/>
+<line id="l1" x1="370" y1="150" x2="420" y2="150" stroke="#1D9E75" stroke-width="1"/>
+<circle id="d1" cx="420" cy="150" r="6" fill="#1D9E75"/>
+<text class="t" x="465" y="155" text-anchor="middle">+</text>
+<circle cx="560" cy="150" r="50" fill="none" stroke="#D85A30" stroke-width="1"/>
+<line id="l2" x1="560" y1="150" x2="610" y2="150" stroke="#D85A30" stroke-width="1"/>
+<circle id="d2" cx="610" cy="150" r="6" fill="#D85A30"/>
+<text class="th" x="130" y="280" text-anchor="middle">Precessing orbit</text>
+<text class="ts" x="130" y="298" text-anchor="middle">dashed axis turns at ω_L</text>
+<text class="th" x="370" y="280" text-anchor="middle">Counterclockwise</text>
+<text class="ts" x="370" y="298" text-anchor="middle">ω₀ + ω_L, faster</text>
+<text class="th" x="560" y="280" text-anchor="middle">Clockwise</text>
+<text class="ts" x="560" y="298" text-anchor="middle">ω₀ − ω_L, slower</text>
+<line x1="40" y1="320" x2="640" y2="320" stroke="var(--b)" stroke-width="0.5"/>
+<text class="th" x="40" y="350">Spectrum</text>
+<text id="t1" class="ts" x="280" y="350" text-anchor="middle">ω₀ − ω_L</text>
+<text id="t2" class="ts" x="400" y="350" text-anchor="middle">ω₀ + ω_L</text>
+<line id="s0" x1="340" y1="362" x2="340" y2="420" stroke="#888780" stroke-width="4"/>
+<line id="s1" x1="280" y1="362" x2="280" y2="420" stroke="#D85A30" stroke-width="4"/>
+<line id="s2" x1="400" y1="362" x2="400" y2="420" stroke="#1D9E75" stroke-width="4"/>
+<line x1="160" y1="424" x2="520" y2="424" stroke="var(--t)" stroke-width="0.5"/>
+<text class="ts" x="340" y="442" text-anchor="middle">ω₀ (motion along B)</text>
+<text class="ts" x="520" y="462" text-anchor="end">frequency →</text>
+</svg>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var w0=5,B=0.5,p1=0,p2=0,pts=[],run=true,last=null;
+function setB(){B=$('bs').value/100;$('bl').textContent=B.toFixed(2);pts=[];
+var d=B*130;$('s1').setAttribute('x1',340-d);$('s1').setAttribute('x2',340-d);$('s2').setAttribute('x1',340+d);$('s2').setAttribute('x2',340+d);
+$('t1').setAttribute('x',340-d);$('t2').setAttribute('x',340+d);
+var o=d<36?0:1;$('t1').setAttribute('opacity',o);$('t2').setAttribute('opacity',o);}
+function draw(){
+var x1=50*Math.cos(p1),y1=-50*Math.sin(p1),x2=50*Math.cos(p2),y2=50*Math.sin(p2);
+$('d1').setAttribute('cx',370+x1);$('d1').setAttribute('cy',150+y1);$('l1').setAttribute('x2',370+x1);$('l1').setAttribute('y2',150+y1);
+$('d2').setAttribute('cx',560+x2);$('d2').setAttribute('cy',150+y2);$('l2').setAttribute('x2',560+x2);$('l2').setAttribute('y2',150+y2);
+var ex=130+x1+x2,ey=150+y1+y2;$('e').setAttribute('cx',ex);$('e').setAttribute('cy',ey);
+pts.push(ex.toFixed(1)+','+ey.toFixed(1));if(pts.length>500)pts.shift();$('tr').setAttribute('points',pts.join(' '));
+var a=(p1-p2)/2,c=100*Math.cos(a),s=100*Math.sin(a);
+$('ax').setAttribute('x1',130-c);$('ax').setAttribute('y1',150+s);$('ax').setAttribute('x2',130+c);$('ax').setAttribute('y2',150-s);}
+function step(ts){if(last===null)last=ts;var dt=Math.min((ts-last)/1000,0.05);last=ts;
+if(run){var wL=B*0.8;p1+=(w0+wL)*dt;p2+=(w0-wL)*dt;draw();}
+requestAnimationFrame(step);}
+$('bs').addEventListener('input',setB);
+$('pp').addEventListener('click',function(){run=!run;$('pp').textContent=run?'Pause':'Play';});
+setB();draw();requestAnimationFrame(step);
+})();
+</script>
+<p class="note">Recreated from the chat "Zeeman effect and electron precession". Speeds and sizes in animations are scaled for visibility.</p>
+</body>
+</html>

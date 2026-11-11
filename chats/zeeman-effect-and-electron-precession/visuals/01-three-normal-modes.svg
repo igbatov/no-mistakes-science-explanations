@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="330" viewBox="0 0 680 330" role="img"><title>The three normal modes of a bound electron in a magnetic field</title><desc>Left: linear oscillation along B at the unchanged frequency. Middle: counterclockwise circular motion about B, where the magnetic force points inward and the frequency rises by the Larmor frequency. Right: clockwise circular motion, where the magnetic force points outward and the frequency falls by the Larmor frequency.</desc><style>
+:root{--p:#1f1e1d;--s:#5f5e5a;--t:#888780;--b:#d3d1c7}
+text{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.t{font-size:14px;font-weight:400;fill:var(--p)}.th{font-size:14px;font-weight:500;fill:var(--p)}.ts{font-size:12px;font-weight:400;fill:var(--s)}
+.leader{stroke:var(--t);stroke-width:.5;stroke-dasharray:3 3;fill:none}
+.c-gray{--f:#F1EFE8;--k:#5F5E5A;--h:#444441;--u:#5F5E5A}.c-teal{--f:#E1F5EE;--k:#0F6E56;--h:#085041;--u:#0F6E56}.c-coral{--f:#FAECE7;--k:#993C1D;--h:#712B13;--u:#993C1D}
+g[class*="c-"]>rect,g[class*="c-"]>circle,g[class*="c-"]>ellipse,rect[class*="c-"],circle[class*="c-"],ellipse[class*="c-"]{fill:var(--f);stroke:var(--k)}
+g[class*="c-"]>.th,g[class*="c-"]>.t{fill:var(--h)}g[class*="c-"]>.ts{fill:var(--u)}
+</style><rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<line x1="130" y1="215" x2="130" y2="160" stroke="var(--t)" stroke-width="1"/>
+<line x1="130" y1="140" x2="130" y2="85" stroke="var(--t)" stroke-width="1" marker-end="url(#arrow)"/>
+<text class="ts" x="142" y="94">B</text>
+<line x1="106" y1="118" x2="106" y2="182" stroke="#888780" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<circle class="c-gray" cx="130" cy="150" r="7" stroke-width="0.5"/>
+<circle cx="340" cy="150" r="60" fill="none" stroke="var(--t)" stroke-width="0.5" stroke-dasharray="3 3"/>
+<circle cx="340" cy="150" r="6" fill="none" stroke="var(--t)" stroke-width="1"/>
+<circle cx="340" cy="150" r="1.5" fill="var(--t)"/>
+<text class="ts" x="340" y="176" text-anchor="middle">B</text>
+<path d="M 392 120 A 60 60 0 0 0 370 98" fill="none" stroke="#1D9E75" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="392" y1="150" x2="358" y2="150" stroke="#1D9E75" stroke-width="2" marker-end="url(#arrow)"/>
+<text class="ts" x="375" y="140" text-anchor="middle">F</text>
+<circle class="c-teal" cx="400" cy="150" r="7" stroke-width="0.5"/>
+<circle cx="550" cy="150" r="60" fill="none" stroke="var(--t)" stroke-width="0.5" stroke-dasharray="3 3"/>
+<circle cx="550" cy="150" r="6" fill="none" stroke="var(--t)" stroke-width="1"/>
+<circle cx="550" cy="150" r="1.5" fill="var(--t)"/>
+<text class="ts" x="550" y="176" text-anchor="middle">B</text>
+<path d="M 602 180 A 60 60 0 0 1 580 202" fill="none" stroke="#D85A30" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="618" y1="150" x2="650" y2="150" stroke="#D85A30" stroke-width="2" marker-end="url(#arrow)"/>
+<text class="ts" x="634" y="140" text-anchor="middle">F</text>
+<circle class="c-coral" cx="610" cy="150" r="7" stroke-width="0.5"/>
+<text class="th" x="130" y="254" text-anchor="middle">Along B</text>
+<text class="ts" x="130" y="274" text-anchor="middle">ω₀, unchanged</text>
+<text class="th" x="340" y="254" text-anchor="middle">Counterclockwise</text>
+<text class="ts" x="340" y="274" text-anchor="middle">ω₀ + ω_L, faster</text>
+<text class="th" x="550" y="254" text-anchor="middle">Clockwise</text>
+<text class="ts" x="550" y="274" text-anchor="middle">ω₀ − ω_L, slower</text>
+<text class="ts" x="340" y="308" text-anchor="middle">In the two circles B points out of the page. F is the magnetic force on the electron.</text>
+</svg>

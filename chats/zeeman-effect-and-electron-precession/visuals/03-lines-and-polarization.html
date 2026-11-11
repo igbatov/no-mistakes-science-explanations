@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zeeman lines and their polarization by viewing direction</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Zeeman lines and their polarization by viewing direction</h1>
+<svg width="100%" viewBox="0 0 680 416" role="img"><title>Zeeman spectral lines and their polarization for two viewing directions</title><desc>With no field there is one line at the original frequency. Viewed along the field there are two lines, shifted down and up by the Larmor frequency, with clockwise and counterclockwise circular polarization. Viewed across the field there are three lines: the outer two linearly polarized perpendicular to B and the central one parallel to B.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<line class="leader" x1="340" y1="30" x2="340" y2="372"/>
+<line class="leader" x1="440" y1="30" x2="440" y2="372"/>
+<line class="leader" x1="540" y1="30" x2="540" y2="372"/>
+<text class="th" x="40" y="58">No field</text>
+<text class="ts" x="40" y="78">One line at ω₀</text>
+<line x1="440" y1="40" x2="440" y2="84" stroke="#888780" stroke-width="4"/>
+<line x1="40" y1="130" x2="640" y2="130" stroke="var(--b)" stroke-width="0.5"/>
+<text class="th" x="40" y="168">Viewed along B</text>
+<text class="ts" x="40" y="188">Two lines, circular</text>
+<line x1="340" y1="150" x2="340" y2="194" stroke="#D85A30" stroke-width="4"/>
+<line x1="540" y1="150" x2="540" y2="194" stroke="#1D9E75" stroke-width="4"/>
+<path d="M 329 216 A 11 11 0 1 1 340 227" fill="none" stroke="#D85A30" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 551 216 A 11 11 0 1 0 540 227" fill="none" stroke="#1D9E75" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text class="ts" x="340" y="250" text-anchor="middle">clockwise</text>
+<text class="ts" x="540" y="250" text-anchor="middle">counterclockwise</text>
+<circle cx="616" cy="172" r="6" fill="none" stroke="var(--t)" stroke-width="1"/>
+<circle cx="616" cy="172" r="1.5" fill="var(--t)"/>
+<text class="ts" x="628" y="176">B</text>
+<line x1="40" y1="264" x2="640" y2="264" stroke="var(--b)" stroke-width="0.5"/>
+<text class="th" x="40" y="298">Viewed across B</text>
+<text class="ts" x="40" y="318">Three lines, linear</text>
+<line x1="340" y1="278" x2="340" y2="322" stroke="#D85A30" stroke-width="4"/>
+<line x1="440" y1="278" x2="440" y2="322" stroke="#888780" stroke-width="4"/>
+<line x1="540" y1="278" x2="540" y2="322" stroke="#1D9E75" stroke-width="4"/>
+<line x1="326" y1="340" x2="354" y2="340" stroke="#D85A30" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<line x1="452" y1="330" x2="452" y2="352" stroke="#888780" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<line x1="526" y1="340" x2="554" y2="340" stroke="#1D9E75" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text class="ts" x="340" y="364" text-anchor="middle">across B</text>
+<text class="ts" x="474" y="364" text-anchor="middle">along B</text>
+<text class="ts" x="540" y="364" text-anchor="middle">across B</text>
+<line x1="616" y1="318" x2="616" y2="284" stroke="var(--t)" stroke-width="1" marker-end="url(#arrow)"/>
+<text class="ts" x="628" y="296">B</text>
+<line x1="260" y1="378" x2="620" y2="378" stroke="var(--t)" stroke-width="0.5"/>
+<text class="ts" x="340" y="398" text-anchor="middle">ω₀ − ω_L</text>
+<text class="ts" x="440" y="398" text-anchor="middle">ω₀</text>
+<text class="ts" x="540" y="398" text-anchor="middle">ω₀ + ω_L</text>
+</svg>
+<p class="note">Recreated from the chat "Zeeman effect and electron precession". Speeds and sizes in animations are scaled for visibility.</p>
+</body>
+</html>

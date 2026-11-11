@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animation: orbiting, spinning electron beside the vector model</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Animation: orbiting, spinning electron beside the vector model</h1>
+<h2 class="sr-only">Animation with two synchronized views: an electron drawn as a spinning ball orbiting a nucleus, with L perpendicular to the orbit and S along the spin axis, beside the vector triangle L plus S equals J and the magnetic moment.</h2>
+<div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text-secondary);padding:4px 0 8px">
+<span>Field B</span>
+<input type="range" id="bs" min="0" max="100" value="50" style="flex:1" aria-label="External field strength">
+<span id="bl" style="min-width:40px;text-align:right">0.50</span>
+<button id="sw" style="padding:4px 12px;border:0.5px solid var(--border-strong);border-radius:var(--radius);background:transparent;color:var(--text-primary);cursor:pointer;font-size:13px">Switch level</button>
+<button id="pp" style="padding:4px 12px;border:0.5px solid var(--border-strong);border-radius:var(--radius);background:transparent;color:var(--text-primary);cursor:pointer;font-size:13px">Pause</button>
+</div>
+<svg width="100%" viewBox="0 0 680 450" role="img"><title>Orbiting spinning electron and the matching vector diagram</title><desc>Left: nucleus at the centre, a tilted orbit ring, an electron ball moving on it with a spin axis arrow S, the arrow L from the nucleus perpendicular to the orbit, and a dashed J axis. Right: arrows L and S adding to J, with the magnetic moment wobbling around its dashed average opposite to J. Both views turn slowly about the vertical field B.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<line x1="170" y1="380" x2="170" y2="36" stroke="var(--t)" stroke-width="0.5" marker-end="url(#arrow)"/>
+<text class="th" x="180" y="44">B</text>
+<line id="pjx" x1="170" y1="220" x2="170" y2="100" stroke="var(--p)" stroke-width="1" stroke-dasharray="4 3"/>
+<polyline id="orb" fill="none" stroke="#1D9E75" stroke-width="1" points=""/>
+<line id="plv" x1="170" y1="220" x2="170" y2="150" stroke="#1D9E75" stroke-width="2" marker-end="url(#arrow)"/>
+<circle cx="170" cy="220" r="5" fill="var(--p)"/>
+<circle id="ball" cx="250" cy="220" r="12" fill="#7F77DD" fill-opacity="0.3" stroke="#7F77DD" stroke-width="1"/>
+<polyline id="beq" fill="none" stroke="#7F77DD" stroke-width="1" points=""/>
+<circle id="bd" cx="250" cy="220" r="2.5" fill="#7F77DD"/>
+<line id="psv" x1="250" y1="208" x2="250" y2="170" stroke="#7F77DD" stroke-width="2" marker-end="url(#arrow)"/>
+<text id="ptl" class="th" x="180" y="150">L</text>
+<text id="pts" class="th" x="258" y="170">S</text>
+<text id="ptj" class="th" x="180" y="100">J</text>
+<text class="ts" x="170" y="398" text-anchor="middle">nucleus at centre, electron on orbit</text>
+<line x1="340" y1="40" x2="340" y2="400" stroke="var(--b)" stroke-width="0.5"/>
+<line x1="510" y1="380" x2="510" y2="36" stroke="var(--t)" stroke-width="0.5" marker-end="url(#arrow)"/>
+<text class="th" x="520" y="44">B</text>
+<polyline id="tr" fill="none" stroke="#D85A30" stroke-width="0.5" opacity="0.6" points=""/>
+<line id="ma" x1="510" y1="230" x2="510" y2="300" stroke="#D85A30" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+<line id="mu" x1="510" y1="230" x2="510" y2="300" stroke="#D85A30" stroke-width="2" marker-end="url(#arrow)"/>
+<line id="lv" x1="510" y1="230" x2="510" y2="130" stroke="#1D9E75" stroke-width="2" marker-end="url(#arrow)"/>
+<line id="sv" x1="510" y1="130" x2="510" y2="100" stroke="#7F77DD" stroke-width="2" marker-end="url(#arrow)"/>
+<line id="jv" x1="510" y1="230" x2="510" y2="100" stroke="var(--p)" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="510" cy="230" r="3" fill="var(--p)"/>
+<text id="tj" class="th" x="520" y="100">J</text>
+<text id="tl" class="th" x="520" y="150">L</text>
+<text id="ts" class="th" x="520" y="120">S</text>
+<text id="tm" class="th" x="520" y="300">μ</text>
+<text class="ts" x="510" y="398" text-anchor="middle">same arrows added: L + S = J, magnet μ</text>
+<text id="lev" class="t" x="340" y="432" text-anchor="middle">Level ²P3/2: g = 4/3</text>
+</svg>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var lv=[{n:'Level ²P3/2: S leans along J, g = 4/3',J2:3.75,m:1.5},{n:'Level ²P1/2: S leans against J, g = 2/3',J2:0.75,m:0.5}];
+var k=0,B=0.5,run=true,phi=0.6,chi=0,orb=0,spin=0,last=null,tr=[],el=0.3,ce=Math.cos(el),se=Math.sin(el);
+function P(c,v,s){return [c[0]+v[0]*s,c[1]-(v[2]*ce-v[1]*se)*s];}
+function ln(id,p,q){var e=$(id);e.setAttribute('x1',p[0]);e.setAttribute('y1',p[1]);e.setAttribute('x2',q[0]);e.setAttribute('y2',q[1]);}
+function tx(id,p,dx,dy){var e=$(id);e.setAttribute('x',p[0]+dx);e.setAttribute('y',p[1]+dy);}
+function cr(a,b){return [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}
+function nm(a){var n=Math.sqrt(a[0]*a[0]+a[1]*a[1]+a[2]*a[2]);return [a[0]/n,a[1]/n,a[2]/n];}
+function bas(h){var e1=cr(h,[0,0,1]);if(e1[0]*e1[0]+e1[1]*e1[1]<1e-6)e1=[1,0,0];e1=nm(e1);return [e1,cr(h,e1)];}
+function ring(id,c,h,r,o){var b=bas(h),pts=[];for(var i=0;i<=48;i++){var q=i/48*6.2832,x=Math.cos(q)*r,y=Math.sin(q)*r,p=P(c,[o[0]+b[0][0]*x+b[1][0]*y,o[1]+b[0][1]*x+b[1][1]*y,o[2]+b[0][2]*x+b[1][2]*y],1);pts.push(p[0].toFixed(1)+','+p[1].toFixed(1));}$(id).setAttribute('points',pts.join(' '));return b;}
+function draw(){var o=lv[k],J=Math.sqrt(o.J2),sj=(o.J2+0.75-2)/2,g=1+sj/o.J2,sp=sj/J,sq=Math.sqrt(0.75-sp*sp);
+var ct=o.m/J,st=Math.sqrt(1-ct*ct),cp=Math.cos(phi),sn=Math.sin(phi);
+var j=[st*cp,st*sn,ct],a=[ct*cp,ct*sn,-st],b=[-sn,cp,0],c=Math.cos(chi)*sq,d=Math.sin(chi)*sq;
+var Jv=[j[0]*J,j[1]*J,j[2]*J],Sv=[j[0]*sp+a[0]*c+b[0]*d,j[1]*sp+a[1]*c+b[1]*d,j[2]*sp+a[2]*c+b[2]*d];
+var Lv=[Jv[0]-Sv[0],Jv[1]-Sv[1],Jv[2]-Sv[2]],Mv=[-(Jv[0]+Sv[0]),-(Jv[1]+Sv[1]),-(Jv[2]+Sv[2])],Av=[-g*Jv[0],-g*Jv[1],-g*Jv[2]];
+var R=[510,230],U=60,M=36,pj=P(R,Jv,U),pl=P(R,Lv,U),pm=P(R,Mv,M),pa=P(R,Av,M);
+ln('jv',R,pj);ln('lv',R,pl);ln('sv',pl,pj);ln('mu',R,pm);ln('ma',R,pa);
+tx('tj',pj,10,-4);tx('tl',[(R[0]+pl[0])/2,(R[1]+pl[1])/2],-18,4);tx('ts',[(pl[0]+pj[0])/2,(pl[1]+pj[1])/2],8,14);tx('tm',pm,8,14);
+tr.push(pm[0].toFixed(1)+','+pm[1].toFixed(1));if(tr.length>150)tr.shift();$('tr').setAttribute('points',tr.join(' '));
+var C=[170,220],lh=nm(Lv),sh=nm(Sv),pL=P(C,lh,75),pJ=P(C,j,125);
+ln('plv',C,pL);tx('ptl',pL,8,-2);ln('pjx',C,pJ);tx('ptj',pJ,8,-2);
+var ob=ring('orb',C,lh,90,[0,0,0]),x=Math.cos(orb)*90,y=Math.sin(orb)*90;
+var e=[ob[0][0]*x+ob[1][0]*y,ob[0][1]*x+ob[1][1]*y,ob[0][2]*x+ob[1][2]*y],pe=P(C,e,1);
+$('ball').setAttribute('cx',pe[0]);$('ball').setAttribute('cy',pe[1]);
+var sb=ring('beq',C,sh,12,e),u=Math.cos(spin)*12,w=Math.sin(spin)*12,dv=[sb[0][0]*u+sb[1][0]*w,sb[0][1]*u+sb[1][1]*w,sb[0][2]*u+sb[1][2]*w],pd=P(C,[e[0]+dv[0],e[1]+dv[1],e[2]+dv[2]],1);
+$('bd').setAttribute('cx',pd[0]);$('bd').setAttribute('cy',pd[1]);$('bd').setAttribute('opacity',(dv[1]*ce+dv[2]*se)>0?1:0.3);
+var s0=P(C,[e[0]+sh[0]*12,e[1]+sh[1]*12,e[2]+sh[2]*12],1),s1=P(C,[e[0]+sh[0]*46,e[1]+sh[1]*46,e[2]+sh[2]*46],1);
+ln('psv',s0,s1);tx('pts',s1,8,-2);}
+function step(t){if(last===null)last=t;var dt=Math.min((t-last)/1000,0.05);last=t;
+if(run){var o=lv[k],g=1+((o.J2+0.75-2)/2)/o.J2;orb+=5*dt;spin+=9*dt;chi+=1.3*dt;phi+=g*0.45*B*dt;draw();}
+requestAnimationFrame(step);}
+$('bs').addEventListener('input',function(){B=$('bs').value/100;$('bl').textContent=B.toFixed(2);});
+$('sw').addEventListener('click',function(){k=1-k;$('lev').textContent=lv[k].n;tr=[];draw();});
+$('pp').addEventListener('click',function(){run=!run;$('pp').textContent=run?'Pause':'Play';});
+$('lev').textContent=lv[0].n;draw();requestAnimationFrame(step);
+})();
+</script>
+<p class="note">Recreated from the chat "Zeeman effect and electron precession". Speeds and sizes in animations are scaled for visibility.</p>
+</body>
+</html>

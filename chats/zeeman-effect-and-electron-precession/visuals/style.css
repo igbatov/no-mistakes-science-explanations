@@ -1,0 +1,57 @@
+/* Stand-in for the styles that the Claude chat window supplied to the visuals. */
+:root {
+  --bg: #ffffff;
+  --p: #1f1e1d;
+  --s: #5f5e5a;
+  --t: #888780;
+  --b: #d3d1c7;
+  --bg2: #f7f6f2;
+  --text-primary: var(--p);
+  --text-secondary: var(--s);
+  --border-strong: #b4b2a9;
+  --radius: 8px;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f1e1d;
+    --p: #f1efe8;
+    --s: #c2c0b6;
+    --t: #9c9a92;
+    --b: #444441;
+    --bg2: #2c2c2a;
+    --border-strong: #5f5e5a;
+  }
+}
+body {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 24px 16px;
+  background: var(--bg);
+  color: var(--p);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+h1 { font-size: 18px; font-weight: 500; margin: 0 0 16px; }
+p.note { font-size: 13px; color: var(--s); margin: 16px 0 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+svg { display: block; }
+svg text { font-family: inherit; }
+.t  { font-size: 14px; font-weight: 400; fill: var(--p); }
+.th { font-size: 14px; font-weight: 500; fill: var(--p); }
+.ts { font-size: 12px; font-weight: 400; fill: var(--s); }
+.leader { stroke: var(--t); stroke-width: 0.5; stroke-dasharray: 3 3; fill: none; }
+
+.c-gray   { --f: #F1EFE8; --k: #5F5E5A; --h: #444441; --u: #5F5E5A; }
+.c-teal   { --f: #E1F5EE; --k: #0F6E56; --h: #085041; --u: #0F6E56; }
+.c-coral  { --f: #FAECE7; --k: #993C1D; --h: #712B13; --u: #993C1D; }
+.c-purple { --f: #EEEDFE; --k: #534AB7; --h: #3C3489; --u: #534AB7; }
+@media (prefers-color-scheme: dark) {
+  .c-gray   { --f: #444441; --k: #B4B2A9; --h: #D3D1C7; --u: #B4B2A9; }
+  .c-teal   { --f: #085041; --k: #5DCAA5; --h: #9FE1CB; --u: #5DCAA5; }
+  .c-coral  { --f: #712B13; --k: #F0997B; --h: #F5C4B3; --u: #F0997B; }
+  .c-purple { --f: #3C3489; --k: #AFA9EC; --h: #CECBF6; --u: #AFA9EC; }
+}
+g[class*="c-"] > rect, g[class*="c-"] > circle, g[class*="c-"] > ellipse,
+rect[class*="c-"], circle[class*="c-"], ellipse[class*="c-"] { fill: var(--f); stroke: var(--k); }
+g[class*="c-"] > .th, g[class*="c-"] > .t { fill: var(--h); }
+g[class*="c-"] > .ts { fill: var(--u); }

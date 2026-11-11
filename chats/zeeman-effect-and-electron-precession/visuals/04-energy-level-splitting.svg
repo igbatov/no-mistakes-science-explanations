@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="386" viewBox="0 0 680 386" role="img"><title>Energy level splitting in the normal Zeeman effect</title><desc>With no field, one transition from an l equals 1 level to an l equals 0 level gives one line. With the field on, the upper level splits into three equally spaced sublevels with m equal to plus 1, 0 and minus 1, giving three transitions at the original frequency and at that frequency plus and minus the Larmor frequency.</desc><style>
+:root{--p:#1f1e1d;--s:#5f5e5a;--t:#888780;--b:#d3d1c7}
+text{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.t{font-size:14px;font-weight:400;fill:var(--p)}.th{font-size:14px;font-weight:500;fill:var(--p)}.ts{font-size:12px;font-weight:400;fill:var(--s)}
+.leader{stroke:var(--t);stroke-width:.5;stroke-dasharray:3 3;fill:none}
+.c-gray{--f:#F1EFE8;--k:#5F5E5A;--h:#444441;--u:#5F5E5A}.c-teal{--f:#E1F5EE;--k:#0F6E56;--h:#085041;--u:#0F6E56}.c-coral{--f:#FAECE7;--k:#993C1D;--h:#712B13;--u:#993C1D}
+g[class*="c-"]>rect,g[class*="c-"]>circle,g[class*="c-"]>ellipse,rect[class*="c-"],circle[class*="c-"],ellipse[class*="c-"]{fill:var(--f);stroke:var(--k)}
+g[class*="c-"]>.th,g[class*="c-"]>.t{fill:var(--h)}g[class*="c-"]>.ts{fill:var(--u)}
+</style><rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<text class="ts" x="80" y="70">l = 1</text>
+<line x1="80" y1="80" x2="240" y2="80" stroke="var(--t)" stroke-width="1.5"/>
+<text class="ts" x="80" y="290">l = 0</text>
+<line x1="80" y1="300" x2="240" y2="300" stroke="var(--t)" stroke-width="1.5"/>
+<line x1="160" y1="84" x2="160" y2="294" stroke="#888780" stroke-width="2" marker-end="url(#arrow)"/>
+<line class="leader" x1="240" y1="80" x2="380" y2="50"/>
+<line class="leader" x1="240" y1="80" x2="380" y2="80"/>
+<line class="leader" x1="240" y1="80" x2="380" y2="110"/>
+<line class="leader" x1="240" y1="300" x2="380" y2="300"/>
+<text class="ts" x="490" y="34" text-anchor="middle">Sublevel spacing = ħω_L</text>
+<line x1="380" y1="50" x2="600" y2="50" stroke="var(--t)" stroke-width="1.5"/>
+<line x1="380" y1="80" x2="600" y2="80" stroke="var(--t)" stroke-width="1.5"/>
+<line x1="380" y1="110" x2="600" y2="110" stroke="var(--t)" stroke-width="1.5"/>
+<line x1="380" y1="300" x2="600" y2="300" stroke="var(--t)" stroke-width="1.5"/>
+<text class="ts" x="608" y="54">m = +1</text>
+<text class="ts" x="608" y="84">m = 0</text>
+<text class="ts" x="608" y="114">m = −1</text>
+<line x1="410" y1="114" x2="410" y2="294" stroke="#D85A30" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="490" y1="84" x2="490" y2="294" stroke="#888780" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="570" y1="54" x2="570" y2="294" stroke="#1D9E75" stroke-width="2" marker-end="url(#arrow)"/>
+<text class="ts" x="160" y="322" text-anchor="middle">ω₀</text>
+<text class="ts" x="410" y="322" text-anchor="middle">ω₀ − ω_L</text>
+<text class="ts" x="490" y="322" text-anchor="middle">ω₀</text>
+<text class="ts" x="570" y="322" text-anchor="middle">ω₀ + ω_L</text>
+<text class="th" x="160" y="362" text-anchor="middle">No field</text>
+<text class="th" x="490" y="362" text-anchor="middle">Field on</text>
+</svg>

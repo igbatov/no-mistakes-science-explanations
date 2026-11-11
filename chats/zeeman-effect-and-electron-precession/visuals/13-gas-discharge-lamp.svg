@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="420" viewBox="0 0 680 420" role="img"><title>Gas-discharge lamp</title><desc>A sealed glass tube with a cathode at the left end and an anode at the right, connected through a ballast to a high-voltage supply. Inside, electrons travel from cathode to anode and collide with gas atoms; excited atoms emit light that leaves through the glass.</desc><style>
+:root{--p:#1f1e1d;--s:#5f5e5a;--t:#888780;--b:#d3d1c7}
+text{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.t{font-size:14px;font-weight:400;fill:var(--p)}.th{font-size:14px;font-weight:500;fill:var(--p)}.ts{font-size:12px;font-weight:400;fill:var(--s)}
+.leader{stroke:var(--t);stroke-width:.5;stroke-dasharray:3 3;fill:none}
+.c-gray{--f:#F1EFE8;--k:#5F5E5A;--h:#444441;--u:#5F5E5A}.c-teal{--f:#E1F5EE;--k:#0F6E56;--h:#085041;--u:#0F6E56}.c-coral{--f:#FAECE7;--k:#993C1D;--h:#712B13;--u:#993C1D}
+g[class*="c-"]>rect,g[class*="c-"]>circle,g[class*="c-"]>ellipse,rect[class*="c-"],circle[class*="c-"],ellipse[class*="c-"]{fill:var(--f);stroke:var(--k)}
+g[class*="c-"]>.th,g[class*="c-"]>.t{fill:var(--h)}g[class*="c-"]>.ts{fill:var(--u)}
+</style><rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<text class="th" x="340" y="40" text-anchor="middle">Glass tube with low-pressure vapour</text>
+<rect x="140" y="90" width="400" height="100" rx="50" fill="#D85A30" fill-opacity="0.12" stroke="var(--p)" stroke-width="1"/>
+<rect x="165" y="115" width="10" height="50" fill="var(--p)"/>
+<rect x="505" y="115" width="10" height="50" fill="var(--p)"/>
+<line class="leader" x1="170" y1="113" x2="170" y2="76"/>
+<text class="ts" x="170" y="68" text-anchor="middle">Cathode (−)</text>
+<line class="leader" x1="510" y1="113" x2="510" y2="76"/>
+<text class="ts" x="510" y="68" text-anchor="middle">Anode (+)</text>
+<circle class="c-gray" cx="215" cy="120" r="7" stroke-width="0.5"/>
+<circle class="c-gray" cx="300" cy="112" r="7" stroke-width="0.5"/>
+<circle class="c-gray" cx="385" cy="124" r="7" stroke-width="0.5"/>
+<circle class="c-gray" cx="465" cy="114" r="7" stroke-width="0.5"/>
+<circle class="c-gray" cx="205" cy="166" r="7" stroke-width="0.5"/>
+<circle class="c-gray" cx="345" cy="170" r="7" stroke-width="0.5"/>
+<circle class="c-gray" cx="475" cy="162" r="7" stroke-width="0.5"/>
+<circle cx="270" cy="150" r="9" fill="#D85A30" stroke="#993C1D" stroke-width="0.5"/>
+<circle cx="420" cy="154" r="9" fill="#D85A30" stroke="#993C1D" stroke-width="0.5"/>
+<circle cx="192" cy="142" r="3" fill="#378ADD"/>
+<line x1="198" y1="142" x2="254" y2="148" stroke="#378ADD" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="318" cy="140" r="3" fill="#378ADD"/>
+<line x1="324" y1="141" x2="404" y2="151" stroke="#378ADD" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="440" cy="136" r="3" fill="#378ADD"/>
+<line x1="446" y1="136" x2="494" y2="136" stroke="#378ADD" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M270 161 q6 7 0 14 q-6 7 0 14 q6 7 0 14 q-6 7 0 14 q6 7 0 14 l0 12" fill="none" stroke="#D85A30" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M420 165 q6 7 0 14 q-6 7 0 14 q6 7 0 14 q-6 7 0 14 q6 7 0 14 l0 8" fill="none" stroke="#D85A30" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text class="ts" x="345" y="232" text-anchor="middle">Light out</text>
+<path d="M140 140 L80 140 L80 320 L260 320" fill="none" stroke="var(--p)" stroke-width="1"/>
+<line x1="140" y1="140" x2="165" y2="140" stroke="var(--p)" stroke-width="1"/>
+<line x1="515" y1="140" x2="540" y2="140" stroke="var(--p)" stroke-width="1"/>
+<path d="M540 140 L600 140 L600 320 L560 320" fill="none" stroke="var(--p)" stroke-width="1"/>
+<line x1="460" y1="320" x2="420" y2="320" stroke="var(--p)" stroke-width="1"/>
+<g class="c-gray"><rect x="260" y="296" width="160" height="48" rx="4" stroke-width="0.5"/><text class="th" x="340" y="320" text-anchor="middle" dominant-baseline="central">High-voltage supply</text></g>
+<g class="c-gray"><rect x="460" y="302" width="100" height="36" rx="4" stroke-width="0.5"/><text class="th" x="510" y="320" text-anchor="middle" dominant-baseline="central">Ballast</text></g>
+<circle cx="96" cy="390" r="3" fill="#378ADD"/>
+<text class="ts" x="106" y="394">electron</text>
+<circle class="c-gray" cx="206" cy="390" r="7" stroke-width="0.5"/>
+<text class="ts" x="220" y="394">atom</text>
+<circle cx="306" cy="390" r="9" fill="#D85A30" stroke="#993C1D" stroke-width="0.5"/>
+<text class="ts" x="322" y="394">excited atom</text>
+<path d="M440 390 q5 -7 10 0 q5 7 10 0 q5 -7 10 0 q5 7 10 0" fill="none" stroke="#D85A30" stroke-width="1.5"/>
+<text class="ts" x="490" y="394">photon (light)</text>
+</svg>

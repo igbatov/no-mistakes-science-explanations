@@ -15,6 +15,9 @@ This repository is a snapshot of a Claude project of the same name, taken on 202
 | `models/README.md` | Index of models and the conventions for writing and verifying them |
 | `models/zeeman-effect.md` | Atom emitting or absorbing light in a static magnetic field |
 | `models/atom-excitation-in-gas-discharge-lamp.md` | How atoms in a discharge lamp gain and lose energy |
+| `chats/zeeman-effect-and-electron-precession/` | The conversation the project grew from: transcript, 8 diagrams and 5 animations |
+
+The chat transcript keeps answers as they were given, including statements that were corrected later. For corrected and source-checked content, use the models.
 
 ## How a model is organised
 
