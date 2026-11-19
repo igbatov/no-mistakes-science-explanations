@@ -5,7 +5,7 @@ A working setup for getting careful physics explanations from Claude. It has two
 - **Instructions** that make Claude build a written model of a physical situation before answering, and verify that model against sources.
 - **Models**: one document per physical situation, each listing the objects, processes and regimes involved, with every number and statement marked as verified, calculated or unverified.
 
-This repository is a snapshot of a Claude project of the same name, taken on 2026-11-11. The project is the working copy; this repository is updated when a new snapshot is pushed.
+This repository is a snapshot of a Claude project of the same name, first taken on 2026-11-11 and last updated on 2026-11-19. The project is the working copy; this repository is updated when a new snapshot is pushed.
 
 ## Contents
 
@@ -15,6 +15,10 @@ This repository is a snapshot of a Claude project of the same name, taken on 202
 | `models/README.md` | Index of models and the conventions for writing and verifying them |
 | `models/zeeman-effect.md` | Atom emitting or absorbing light in a static magnetic field |
 | `models/atom-excitation-in-gas-discharge-lamp.md` | How atoms in a discharge lamp gain and lose energy |
+| `models/sodium-emission-spectrum.md` | Why neutral sodium emits many spectral lines, and which |
+| `models/quarter-wave-plate.md` | Linearly polarized light turned into circularly polarized light by a quarter-wave plate |
+| `models/klein-gordon-probability-density.md` | The conserved density of the Klein-Gordon equation and why it can be negative |
+| `models/stone-theorem-schrodinger-uniqueness.md` | Stone's theorem and uniqueness of the solution of the Schrödinger equation |
 | `chats/zeeman-effect-and-electron-precession/` | The conversation the project grew from: transcript, 8 diagrams and 5 animations |
 
 The chat transcript keeps answers as they were given, including statements that were corrected later. For corrected and source-checked content, use the models.

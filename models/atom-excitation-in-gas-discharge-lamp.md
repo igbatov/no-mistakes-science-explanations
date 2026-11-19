@@ -35,6 +35,13 @@ Scope: a low-pressure metal-vapour discharge lamp of the kind used as a spectral
 - Supply of hundreds to thousands of volts; ballast limits the current (U).
 - Field in the tube is steady or oscillates at 50 Hz to radio frequency, far below the atomic resonance at 5.09 × 10¹⁴ Hz.
 
+**Electrodes and direction of flow**
+- Cathode: the negative electrode; it emits electrons into the gas. Anode: the positive electrode; it collects them.
+- Inside the tube, electrons drift from cathode to anode and carry most of the current. Positive ions drift the other way.
+- Conventional current is defined as the flow of positive charge, so inside the tube it points from anode to cathode, opposite to the electron drift.
+- In the external circuit the loop closes: electrons leave the lamp at the anode and return through the supply to the cathode.
+- On alternating current the two electrodes swap roles every half cycle, so the drift direction reverses with them.
+
 **Energy balance**
 - In a commercial low-pressure sodium lamp about 30% of the input power leaves as visible light; the rest goes mainly to heat.
 
@@ -214,10 +221,16 @@ Sources for statements:
 - [T9] Zeeman, Astrophys. J. 5, 332 (1897): https://articles.adsabs.harvard.edu/pdf/1897ApJ.....5..332Z
 - [T10] IET review "Low-pressure sodium discharge lamps" (abstract): https://digital-library.theiet.org/doi/10.1049/ip-a-1.1981.0065
 - [T11] Field ionization threshold: https://discovery-pp.ucl.ac.uk/id/eprint/10067244/1/PhysRevA.99.013421.pdf ; atomic field unit: https://repository.royalholloway.ac.uk/items/dd3f0569-7400-8a4e-9728-2e4c8cd473a7/8/PhysRevA.58.3884.pdf
+- [T12] Electrode roles: RP Photonics encyclopedia, gas discharge lamps: https://www.rp-photonics.com/gas_discharge_lamps.html ; US patent 2692350: https://patents.google.com/patent/US2692350A/en ; US patent 4408141 (AC operation): https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/4408141
 - [S2], [S3], [S6], [S8], [S9], [S12], [S13] as in section 6.
 
 | Item | Statement | Status | Source |
 |---|---|---|---|
+| Electrodes | cathode is negative and emits electrons into the gas; anode collects them | V | T12 |
+| Electrodes | current in the tube is carried mainly by electrons drifting from cathode to anode | V | T12 (patent 2692350) |
+| Electrodes | conventional current points opposite to electron flow | U | definition, not looked up |
+| Electrodes | electrons return through the external circuit from anode to cathode | C | charge conservation around a closed loop |
+| Electrodes | on AC the electrodes swap roles each half cycle | V | T12 (patent 4408141) |
 | Electrons | electron temperature far above gas and ion temperature; heated by the axial field | V | T5 |
 | Electrons | distribution can be non-Maxwellian | V | T4 |
 | E1 | elastic collisions limit conductivity | V | NIST fluorescent-lamp paper found in the same search (Hg–Ar); by analogy |
@@ -260,3 +273,4 @@ Corrections to statements (2026-11-11):
 - Regime list by electron energy corrected (E5, E6 below 2.10 eV); regimes by current and by pressure added.
 - Limit added: the model describes the positive column, not the cathode region.
 - Added: Cooper minimum, measured photoionization cross-sections, 5p line, argon excited states, energy balance.
+- Added "Electrodes and direction of flow" to the objects, with its verification rows (the model had not said which way electrons move).

@@ -8,6 +8,10 @@ Each physical situation discussed in this project has its own model document in 
 |---|---|---|---|
 | `models/zeeman-effect.md` | Atom emitting or absorbing light in a static magnetic field (normal and anomalous Zeeman effect, precession, Landé g-factor) | 2026-11-11 | 2026-11-11 |
 | `models/atom-excitation-in-gas-discharge-lamp.md` | How atoms in a discharge lamp gain and lose energy (electron collisions, light, heat, the applied field) | 2026-11-11 | 2026-11-11 |
+| `models/sodium-emission-spectrum.md` | Why neutral sodium emits many lines: level scheme, quantum defects, selection rule, series, doublets | 2026-11-11 | 2026-11-11 |
+| `models/quarter-wave-plate.md` | Linearly polarized light passing through a birefringent quarter-wave plate and emerging circularly (or elliptically) polarized; handedness conventions | 2026-11-13 | 2026-11-13 |
+| `models/klein-gordon-probability-density.md` | Conserved density of the Klein-Gordon equation for a spin-0 particle: why it can be negative, why \|φ\|² is not conserved, charge-density reinterpretation | 2026-11-13 | 2026-11-13 |
+| `models/stone-theorem-schrodinger-uniqueness.md` | Stone's theorem and the initial-value problem iħ·dψ/dt = Hψ with time-independent H: existence, uniqueness of strong and weak solutions, role of self-adjointness against symmetry, self-adjoint extensions | 2026-11-18 | 2026-11-18 |
 
 ## Conventions
 

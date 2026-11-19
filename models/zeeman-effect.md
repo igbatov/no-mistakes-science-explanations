@@ -33,6 +33,8 @@ Scope: a free atom with one or a few outer electrons, in a static, uniform magne
 - D2: ²P3/2 → ²S1/2, 589.158 nm in vacuum (about 589.00 nm in air). Photon energy 2.1044 eV.
 - Fine-structure gap of 3p: 17.196 cm⁻¹ = 2.132 meV = 515.5 GHz.
 - 3p lifetime: 16.30 ns (²P1/2), 16.25 ns (²P3/2). Natural linewidth 9.8 MHz.
+- Fine-structure gaps of the d levels are far smaller and inverted (J = 5/2 below J = 3/2): 3d 0.050 cm⁻¹ = 1.5 GHz; 4d 1028.3 MHz; 5d and 6d smaller still (not looked up; about 0.5 and 0.3 GHz if the gap scales as 1/n³).
+- The s levels (4s, 5s, 6s …) have no fine structure; like 3s they are ²S1/2 with g = 2.
 - Ground-state hyperfine splitting: 1.7716 GHz.
 - Nuclear g-factor g_I = −0.00080, about 4 × 10⁻⁴ of the ground-state g_J.
 - Ionization energy: 5.1391 eV.
@@ -64,6 +66,8 @@ Scope: a free atom with one or a few outer electrons, in a static, uniform magne
 
 **Sub-model: classical Lorentz oscillator.** Electron on a spring, frequency ω₀, plus magnetic force. Gives three modes at ω₀ and ω₀ ± ω_L, equivalent to an orbit precessing at ω_L. It reproduces P2, P5 and P6 for lines where both levels have S = 0 (g = 1). It fails when S ≠ 0; sodium needs the quantum treatment.
 
+How one precessing orbit contains three frequencies (C, derived from the three modes): take a circular orbit of radius R whose axis is tilted by θ from B. Its motion splits into (a) an oscillation along B of amplitude R·sin θ, untouched by a rotation about B, frequency ω₀; (b) a circle about B in the sense of the precession, radius R(1 + cos θ)/2, frequency ω₀ + ω_L; (c) a circle about B in the opposite sense, radius R(1 − cos θ)/2, frequency ω₀ − ω_L. The precession multiplies the in-plane motion by a slow rotation, so it appears as the sum and difference frequencies and not as a separate component at ω_L; the orbit is centred on the nucleus, so nothing in the charge's position varies at ω_L alone. Limits: θ = 0 gives only ω₀ + ω_L, θ = 180° only ω₀ − ω_L, θ = 90° all three with (b) and (c) equal. A lamp contains atoms with every tilt, so all three lines appear together.
+
 **Vector model (semi-classical picture of P1 and P3).**
 - μ = −(e/2m)(L + 2S) = −(e/2m)(J + S); not parallel to J.
 - Fast precession about J averages μ to −g(e/2m)J.
@@ -78,8 +82,10 @@ Scope: a free atom with one or a few outer electrons, in a static, uniform magne
 | R1 | Hyperfine regime | Zeeman splitting ≲ hyperfine splitting; for Na ground state B ≲ 0.06 T | F is a good quantum number, shifts g_F·m_F·μ_B·B; P7 with P2. At intermediate fields the ground state follows the Breit–Rabi formula |
 | R2 | Weak field (anomalous Zeeman) | hyperfine ≪ μ_B·B ≪ fine structure; for Na roughly 0.1 T to a few T | P1, P2, P3, P5, P6. For the nucleus this is already the "hyperfine Paschen–Back" regime: states labelled m_J, m_I |
 | R3 | Intermediate | μ_B·B approaching fine structure; Na 3p: roughly 5 T to 100 T (boundaries are a judgement, not sharp) | P2 and P4 mixed; g-factor formula inaccurate; in general needs numerical diagonalization |
-| R4 | Strong field (Paschen–Back) | μ_B·B ≫ fine structure (≫ 37 T for Na 3p) | L and S precess about B separately; J is no longer a good quantum number; shifts (m_L + 2m_S)·μ_B·B; pattern is a triplet whose lines are narrow doublets |
+| R4 | Strong field (Paschen–Back) | μ_B·B ≫ fine structure (≫ 37 T for Na 3p) | L and S precess about B separately; J is no longer a good quantum number; shifts (m_L + 2m_S)·μ_B·B; transitions keep the spin orientation (Δm_S = 0, Δm_L = 0, ±1), so the spin part of the shift is the same in both levels and cancels in the line positions; pattern is a triplet whose lines are narrow doublets (one member from spin-up atoms, one from spin-down, separated by the leftover spin–orbit energy) |
 | R5 | Very strong field or highly excited states | P9 comparable to P2 (at 1 T: n above roughly 25) | diamagnetic term matters |
+
+Regimes apply level by level, not atom by atom. The boundary for each level is set by its own fine-structure gap, so one spectral line can join an upper level in R4 to a lower level in R2. For sodium: μ_B·B equals the gap at 0.107 T for 3d and 0.073 T for 4d, against 36.8 T for 3p. At 1 T the d levels are therefore in the Paschen–Back regime while 3p is still in the weak-field regime. Patterns of such lines do not follow from two Landé factors; they are obtained by diagonalizing A·L·S + μ_B·B·(L_z + 2S_z) for each level.
 
 Resolution condition: components are separable when their spacing exceeds the line width. For the Na D lines, component shifts range from 4.7 to 23.3 GHz per tesla and the smallest spacing between neighbouring components is 9.3 GHz per tesla. With a Doppler width of about 1.7 GHz, spacing equals width at about 0.18 T. A high-resolution instrument (Fabry–Pérot) is needed.
 
@@ -104,6 +110,11 @@ Conditions: discharge lamp, B ≈ 0.2 to 1 T, viewing across or along B, Fabry�
 - Cd 643.8 nm: 0 (π), ±1 (σ). Three lines. σ shift 14 GHz = 0.019 nm at 1 T.
 - Viewed along B, the π lines are absent.
 - These use the Landé-formula g values; the measured g values differ by about 0.1%.
+
+**Other visible sodium lines at 1 T (calculated by diagonalization; shifts in GHz from the zero-field line):**
+- Sharp series, ns → 3p (616.07/615.42 nm, 515.34/514.88 nm): the levels are ²S1/2 and ²P, the same pair of g-factors as the D lines. The line ending on ²P3/2 (longer wavelength) gives the six-line pattern, the one ending on ²P1/2 the four-line pattern.
+- Diffuse series, nd → 3p (568.82/568.26, 498.28/497.85, 466.86/466.48 nm): upper level in R4, lower in R2. The line group ending on ²P3/2 has about 15 components and the group ending on ²P1/2 has 12, lying on a grid of about 4.7 GHz (μ_B·B/3) between −24 and +24 GHz, several of them coinciding within 0.5 GHz.
+- At 1 T the 3p level already departs slightly from the weak-field formula: the D2 components come out at −23.2, −14.0, −4.6, +4.8, +14.0, +23.4 GHz instead of symmetric values.
 
 ## 5. Known limits of this model
 
@@ -154,6 +165,13 @@ Sources:
 | D1 span at 1 T | 37 GHz; 0.043 nm | C | (8/3) × 13.996 GHz; Δλ = λ²Δν/c |
 | Classical electron radius; equator speed ≈ 10 c | 2.8 × 10⁻¹⁵ m | V | T11 |
 | R3 boundaries (5 T, 100 T) | — | U | judgement |
+| 3d fine-structure gap | 0.050 cm⁻¹ = 1.50 GHz, inverted | V, C | S3 (levels 29172.839 and 29172.889 cm⁻¹) |
+| 4d fine-structure gap | 1028.3(6) MHz | V | S6 |
+| 5d, 6d gaps | about 0.5, 0.3 GHz | U | 1/n³ scaling from 4d; not looked up |
+| Field where μ_B·B = gap | 0.107 T (3d), 0.073 T (4d) | C | gap / 13.996 GHz per tesla |
+| Patterns of the sharp and diffuse lines at 1 T | as listed in section 4 | C | numerical diagonalization of A·L·S + μ_B·B·(L_z + 2S_z) in the m_l, m_s basis, dipole strengths from Clebsch–Gordan coefficients; the same code reproduces ±2/3, ±4/3 for D1 |
+
+- [S6] Fredriksson & Svanberg, Phys. Lett. A 53, 61 (1975), fine structure of Na 4d: https://www.lunduniversity.lu.se/lup/publication/8da77823-be7e-4b13-aad3-d4d72074bac8
 
 Corrections to numbers (2026-11-11):
 - Fine-structure gap 516 GHz → 515.5 GHz.
@@ -186,6 +204,8 @@ Sources for statements:
 | P2 | sublevel shift g·m·μ_B·B | V | S2 (Eq. 24, for F levels), T3 |
 | P3 | fine structure from L–S coupling | V | S2 |
 | P4, R4 | strong field decouples L and S; they precess separately about B; J not a good quantum number; shifts (m_L + 2m_S)μ_B·B; triplet of narrow doublets | V | T1, T3, T4, T6 |
+| R4 | strong-field selection rules Δm_S = 0, Δm_L = 0, ±1; lines resemble the normal triplet | V | T3 |
+| R4 | the two members of each narrow doublet come from the two spin orientations | C | follows from Δm_S = 0 and a residual spin–orbit term proportional to m_L·m_S |
 | R3 | intermediate fields need numerical treatment in general | V | T4, S2 |
 | P5 | Δm = 0, ±1 | V | T5, S4 |
 | P5 | J = 0 → J = 0 forbidden | U | textbook rule, not looked up |
@@ -202,9 +222,15 @@ Sources for statements:
 | Spinning ball | classical ball gives g = 1 | U | standard argument, value not confirmed in a source |
 | Cd, S = 0 | normal effect occurs for S = 0 transitions | V | S4 |
 | Limits | LS coupling assumed; jj coupling changes g | U | textbook, not looked up |
+| Regimes per level | the weak/strong boundary depends on each level's own fine-structure gap | C | follows from P4's condition applied to each level; T1 notes that lithium, with a 0.3 cm⁻¹ gap, meets Paschen–Back conditions at modest fields |
+| Na d levels | fine structure is inverted | V | S3, S6 and Fredriksson & Svanberg 1976 (core.ac.uk/download/83786432.pdf) |
+| Diffuse-line patterns | upper level in R4, lower in R2 at 1 T; pattern from diagonalization | C | section 6; not compared with a measured or published pattern |
 | Light | dipole photon carries ħ | U | textbook, not looked up |
 
 Historical note (V, T12): Zeeman's first observation in 1896, with a sodium-salted flame between magnet poles, was a widening of the D lines, not a resolved pattern. Resolved splitting was obtained later with cadmium. Earlier chat answers that described the full line pattern as "what Zeeman found" compressed this.
+
+Historical note on Stern–Gerlach and spin (V, T13): the 1922 experiment was designed to test space quantization of orbital angular momentum in the Bohr–Sommerfeld model, with silver assumed to carry one unit of it; the two-beam result was read as confirming that. Silver's ground state in fact has zero orbital angular momentum and spin ½. Uhlenbeck and Goudsmit did not mention the result when they proposed spin in 1925. Fraser showed in 1927 that ground-state silver, hydrogen and sodium have no orbital moment, after which the splitting was attributed to spin; Phipps and Taylor repeated the experiment with hydrogen in 1927. Landé had argued in 1923, from the two beams, that silver must be in a doublet state with projections ±½.
+- [T13] Friedrich et al., arXiv:2203.07833; Stanford Encyclopedia of Philosophy, "Experiment in Physics", appendix 5: https://plato.stanford.edu/archives/win2016/entries/physics-experiment/app5.html ; Friedrich, Isr. J. Chem. 2023, e202300047.
 
 Corrections to statements (2026-11-11):
 - Spinning-ball objection now states its assumption (classical electron radius).
@@ -212,3 +238,4 @@ Corrections to statements (2026-11-11):
 - R1 and R2 now state which quantum numbers are good, and that R2 is already the hyperfine Paschen–Back regime.
 - P6 now mentions elliptical polarization at intermediate viewing angles.
 - R5 now has a boundary (n above roughly 25 at 1 T).
+- Added: regimes apply level by level; sodium's d levels are in the Paschen–Back regime above about 0.1 T. Before this, the model implied that the visible sodium lines are in the weak-field regime up to a few tesla, which holds for lines between s and p levels only.
